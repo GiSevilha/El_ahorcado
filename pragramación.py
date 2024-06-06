@@ -3,7 +3,7 @@ from random import choice
 
 def chooseWord():
     words = ["monkey", "tiger", "bear", "snake", "shark"]
-    word_chosen = choice(words).capitalize()
+    word_chosen = choice(words)
     return word_chosen
 
 def totalLetters(word_chosen):
@@ -19,3 +19,14 @@ def showWord(total):
 selected_word = chooseWord()
 total = totalLetters(selected_word)
 print(showWord(total))
+
+chances = 6
+while chances > 0:
+    chances -= 1
+    selected_letter = str(input("Choose a letter: ")).lower()
+    #comparar a letra com a palabra
+    for i in selected_word:
+        if i == selected_letter:
+            print(i, end='')
+        else:
+            print("_", end='')
